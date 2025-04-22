@@ -1,0 +1,1 @@
+## 版本号在 node_exporter/defaults/main.yml 中修改

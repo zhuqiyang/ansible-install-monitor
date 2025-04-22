@@ -1,0 +1,30 @@
+---
+# tasks file for node_exporter
+- name: install node_exporter
+  unarchive:
+    src: node_exporter-1.9.1.linux-amd64.tar.gz
+    dest: /usr/local/
+
+- name: Remove existing node_exporter directory if exists
+  file:
+    path: /usr/local/node_exporter
+    state: absent
+
+- name: create node_exporter-{{ version }}.linux-amd64 directory link
+  file:
+    src: /usr/local/node_exporter-{{ version }}.linux-amd64
+    dest: /usr/local/node_exporter
+    state: link
+    force: yes
+
+- name: copy node_exporter service file
+  copy:
+    src: node_exporter.service
+    dest: /etc/systemd/system/node_exporter.service
+    mode: 0644
+
+- name: Enable and start node_exporter
+  systemd:
+    name: node_exporter
+    state: started
+    enabled: yes

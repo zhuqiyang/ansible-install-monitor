@@ -1,0 +1,15 @@
+*.rpm
+*.deb
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.tar.lzma
+*.tar.lzma
+*.tgz
+*_linux_amd64
+*.zip
+*.tar
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.tar.lzma
