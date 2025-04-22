@@ -28,3 +28,4 @@
     name: node_exporter
     state: started
     enabled: yes
+  no_log: yes
